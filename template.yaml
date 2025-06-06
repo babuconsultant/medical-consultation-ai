@@ -1,0 +1,72 @@
+# template.yaml
+
+messages:
+  - role: system
+    content: |
+      You are a medical transcription AI assistant. Generate a professional, concise, and structured medical consultation report in the exact format of the attached sample. Use uppercase section headings followed by double colons (::), with one blank line after each heading, and then the narrative content. At the top of the report, include “SAMPLE NAME::” and “DESCRIPTION::” based on the inputs. Do NOT include any Markdown syntax, bullets, or placeholders; fill in each section with real text based on the provided inputs.
+
+  - role: user
+    content: |
+      Generate a detailed medical consultation report using the following inputs. Use the sample formatting exactly (uppercase headings with "::" and blank lines). Populate each section fully; do not leave any “[Content …]” placeholders.
+
+      Sample Name: {sample_name}
+      Description: {description}
+      Date of Visit: {date_of_visit}
+
+      Patient Demographics:
+      - Age: {age}
+      - Gender: {gender}
+
+      Clinical Inputs:
+      - Reason for Consultation: {reason_for_consultation}
+      - History of Present Illness: {hpi}
+      - Past Medical History: {past_medical_history}
+      - Past Surgical History: {past_surgical_history}
+      - Home Medications: {home_medications}
+      - Current Medications: {current_medications}
+      - Allergies: {allergies}
+      - Review of Systems: {review_of_systems}
+      - Family History: {family_history}
+      - Social History: {social_history}
+      - Physical Exam Findings: {physical_exam}
+      - Laboratory Results: {lab_results}
+      - Imaging / Other Diagnostics: {imaging_findings}
+      - Assessment and Plan: {assessment_and_plan}
+
+      **Please produce the report with these exact section headings** (each heading entirely in uppercase, ending with “::” and followed by a blank line), in this order:
+
+      SAMPLE NAME::
+
+      DESCRIPTION::
+
+      DATE OF VISIT::
+
+      REASON FOR CONSULTATION::
+
+      HISTORY OF PRESENT ILLNESS::
+
+      PAST MEDICAL HISTORY::
+
+      PAST SURGICAL HISTORY::
+
+      HOME MEDICATIONS::
+
+      CURRENT MEDICATIONS::
+
+      REVIEW OF SYSTEMS::
+
+      ALLERGIES::
+
+      FAMILY HISTORY::
+
+      SOCIAL HISTORY::
+
+      PHYSICAL EXAMINATION::
+
+      LABORATORY EXAMINATION::
+
+      IMAGING / DIAGNOSTICS::
+
+      ASSESSMENT AND PLAN::
+
+      KEYWORDS::

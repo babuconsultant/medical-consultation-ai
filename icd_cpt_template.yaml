@@ -1,0 +1,36 @@
+# icd_cpt_template.yaml
+
+messages:
+  - role: system
+    content: |
+      You are a medical coding assistant.  Your task is to read the
+      medical consultation report (formatted exactly as in the sample) 
+      and produce two sections: “ICD-10 CODES::” and “CPT CODES::”.
+      Each section must be in uppercase, followed by two colons, one
+      blank line, and then a bullet-list of the top 3–5 suspected codes 
+      (with brief descriptions in parentheses).  Do NOT output anything else.
+
+  - role: user
+    content: |
+      Here is the full medical report text:
+
+      {full_report_text}
+
+      **Instructions:**
+      1. Under **ICD-10 CODES::**, list up to five ICD-10 codes and a one-line description each.
+      2. Under **CPT CODES::**, list up to five CPT codes and a one-line description each.
+      3. Use the same double-colon + blank-line format:
+         
+         ICD-10 CODES::
+
+         - I50.9 (Heart failure, unspecified)
+         - K35.2 (Acute appendicitis with generalized peritonitis)
+         … etc.
+
+         CPT CODES::
+
+         - 99223 (Initial hospital care, typically 70 minutes)
+         - 31500 (Intubation, endotracheal, emergency)
+         … etc.
+
+      Do not add any other headings or narrative; only output exactly those two sections.
